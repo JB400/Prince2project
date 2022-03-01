@@ -1,3 +1,4 @@
+//creating html for game 
 const gameArea = document.querySelector('.game');
 const btn = document.createElement('button');
 const btn1 = document.createElement('button');
@@ -22,7 +23,9 @@ gameArea.append(btn1);
 btn1.style.display = 'none';
  const opts = ['*','/','+','-'];
 const game = {correct:'',maxValue:10,questions:10,oVals:[0,1,2,3],curQue:0,hiddenVal:3,inplay:false};
-const player = {correct:0,incorrect:0}; 
+const player = {correct:0,incorrect:0};
+
+// adding evernt liseners tt buttons  
 btn.addEventListener('click',btnCheck);
 btn1.addEventListener('click', buildQuestion);
 
@@ -196,6 +199,7 @@ function checkSecond(sec) {
 
 
 function saveReusult(){
+    // saving result to database througt ajax call
        $.ajax({
         url: "saveresult.php",
         type: "post",
@@ -206,7 +210,7 @@ function saveReusult(){
                 console.log(result);
                 tabllehtml = '';
                 for(i=0; i<result.length; i++){
-                      
+             //when ajax request is done showing data at the fornt          
 tbody.insertAdjacentHTML('beforeend', `   <tr class="row">
       <td class="name">${result[i].name}</td>
       <td class="double"><img src="avatar/${result[i].avatar}"/></td>
@@ -218,14 +222,29 @@ $("#scoreboard").show();
 })
 }
 $(document).ready(function(){
+    //  changing timer accroding to sleected level
+    $("#leves button").click(function(){
+        $("#leves button").removeClass("slected");
+        $(this).addClass("slected");
+        timer.innerText = $(this).attr('data-time')
+    })
+
+
 $("#netbt button").click(function(){
-  if( $("input[name='avatar']:checked").val() != undefined){
+     // making  sure avatar and level is slected
+  if( $("input[name='avatar']:checked").val() != undefined && $("#leves button").hasClass("slected")){
     $(".game").show();
     $("#avatars").hide();
+    $("#leves").hide();
     $(this).parent().hide();
   }
-  else{
+  // if avatar not slected
+  else if($("input[name='avatar']:checked").val() == undefined ){
     alert("please select avatar");
+  }
+// if level not slected 
+   else if(! $("#leves button").hasClass("slected") ){
+    alert("please select Level");
   }
 
   

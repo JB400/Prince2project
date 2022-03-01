@@ -1,5 +1,26 @@
-#logout{
-    float: right;
+header{
+  width: 100%;
+  justify-content: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+}
+#logout a{
+  color: #fff;
+  text-decoration: none;
+}
+button{
+  border: none;
+}
+
+.container{
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.output{
+   
+  width: 100%;
+  color: #ffff;
 }
 .output, .message {
     text-align: center;
@@ -40,16 +61,42 @@
 }
 button {
     text-align: center;
-    margin: 20px auto;
+    margin: 20px 0;
     display: block;
-    padding: 10px;
+    padding: 10px 15px;
     background-color: red;
     border-radius: 10px;
     font-size: 1.5em;
     color:white;
+    cursor: pointer;
 }
 
+#netbt button,.game button,.login-box button{
+     margin: 20px auto;
+}
+.slected{
+  background: #266056 !important;
+}
+#leves h1,#avatars h1{
+  width: 100%;
+  margin: 20px 0;
+  color: #fff;
+  text-align: center;
+}
 
+#leves button{
+  margin: 5px;
+  background: #282c4a;
+  cursor: pointer;
+}
+
+#leves {
+  display: flex;
+  color: #fff;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
 body{
   background-color: #39418b;
@@ -236,9 +283,9 @@ th, td {
 #avatars{
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  padding: 0 10px;
   justify-content: center;
-  
+  flex-wrap: wrap;
   overflow-y: auto;
 }
 .avatars > input{
@@ -255,6 +302,7 @@ th, td {
 }
 .avatars img{
         width: 100px;
+        margin: 0 10px;
     height: 100px;
 }
 

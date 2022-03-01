@@ -11,17 +11,19 @@ if(!(isset($_SESSION['login']))){
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
    <link rel="stylesheet" type="text/css" href="style.css">
-   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+   <link rel="stylesheet" type="text/css" href="font-awesome.min.css">
    <title></title>
 </head>
 <body>
-<header >
+  <div class="container">
+<header>
       <button id="logout"><a href="logout.php">Logout</a></button>
    
 </header>
 
 <div id="avatars">
-
+  <h1>Select Avatar</h1>
+  <h2>This game is for children aged between six and ten</h2>
   <label class="avatars">
     <input type="radio" value="fox avatar.png" name="avatar"/>
     <img src="avatar/fox avatar.png" alt=""/>
@@ -36,11 +38,44 @@ if(!(isset($_SESSION['login']))){
     <input type="radio" value="superhero avatar.jpg" name="avatar"/>
     <img src="avatar/superhero avatar.jpg" alt=""/>
   </label>
+    <label class="avatars">
+    <input type="radio" value="ninja avatar.png" name="avatar"/>
+    <img src="avatar/ninja avatar.png" alt=""/>
+  </label>
+  <label class="avatars">
+    <input type="radio" value="math orange avatar.png" name="avatar"/>
+    <img src="avatar/math orange avatar.png" alt=""/>
+  </label>
+  <label class="avatars">
+    <input type="radio" value="helmet avatar.png" name="avatar"/>
+    <img src="avatar/helmet avatar.png" alt=""/>
+  </label>
+  <label class="avatars">
+    <input type="radio" value="math avatar.svg" name="avatar"/>
+    <img src="avatar/math avatar.svg" alt=""/>
+  </label>
+  <label class="avatars">
+    <input type="radio" value="cute avatar.jpg" name="avatar"/>
+    <img src="avatar/cute avatar.jpg" alt=""/>
+  </label>
+  <label class="avatars">
+    <input type="radio" value="boy avatar.jpg" name="avatar"/>
+    <img src="avatar/girl avatar.jpg" alt=""/>
+  </label>
+  <label class="avatars">
+    <input type="radio" value="girl avatar.jpg" name="avatar"/>
+    <img src="avatar/girl avatar.jpg" alt=""/>
+  </label>
 <input type="hidden" id="u_id" value="<?php echo $_SESSION['id'];?>" name="">
   
 </div>
+<div id="leves">
+    <h1>Select your Level</h1>
+    <button data-time = "5:00">Easy</button>
+    <button data-time="0:30">Hard</button>
+  </div>
 <div id="netbt"><button>Next</button></div>
-  <div class="time" style="display: none;">Time left = <span id="timer">1:10</span></div>
+  <div class="time" style="display: none;">Time left = <span id="timer"></span></div>
 
     <div class="game" style="display:none"></div>
 
@@ -57,12 +92,13 @@ if(!(isset($_SESSION['login']))){
   </tbody>
 </table>
 </div>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.min.js"></script>
     <script src="app.js"></script>
 
 
  
-    <center><iframe width="560" height="315" src="https://www.youtube.com/embed/FBdVAIEymL0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+
+</div>
 </body>
 </html>
 
